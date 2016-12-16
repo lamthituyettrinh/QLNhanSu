@@ -1,0 +1,12 @@
+C:\QLNhanSu\management\management\bin\Debug\management.exe
+C:\QLNhanSu\management\management\bin\Debug\management.pdb
+C:\QLNhanSu\management\management\obj\x86\Debug\management.csprojResolveAssemblyReference.cache
+C:\QLNhanSu\management\management\obj\x86\Debug\management.Form_login.resources
+C:\QLNhanSu\management\management\obj\x86\Debug\management.Form_main.resources
+C:\QLNhanSu\management\management\obj\x86\Debug\management.Properties.Resources.resources
+C:\QLNhanSu\management\management\obj\x86\Debug\management.csproj.GenerateResource.Cache
+C:\QLNhanSu\management\management\obj\x86\Debug\management.exe
+C:\QLNhanSu\management\management\obj\x86\Debug\management.pdb
+C:\QLNhanSu\management\management\obj\x86\Debug\management.BangCong.resources
+C:\QLNhanSu\management\management\bin\Debug\management.exe.config
+C:\QLNhanSu\management\management\obj\x86\Debug\management.LoaiHopDong.resources

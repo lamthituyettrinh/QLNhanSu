@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLNSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="QLNSModelStoreContainer">
+    <EntitySet Name="BangCong" EntityType="QLNSModel.Store.BangCong" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BangLuong" EntityType="QLNSModel.Store.BangLuong" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChiTietHD" EntityType="QLNSModel.Store.ChiTietHD" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChucVu" EntityType="QLNSModel.Store.ChucVu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HopDong" EntityType="QLNSModel.Store.HopDong" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoaiHopDong" EntityType="QLNSModel.Store.LoaiHopDong" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NhanVien" EntityType="QLNSModel.Store.NhanVien" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhongBan" EntityType="QLNSModel.Store.PhongBan" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_BangCong_BangLuong" Association="QLNSModel.Store.FK_BangCong_BangLuong">
+      <End Role="BangLuong" EntitySet="BangLuong" />
+      <End Role="BangCong" EntitySet="BangCong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BangLuong_NhanVien" Association="QLNSModel.Store.FK_BangLuong_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="BangLuong" EntitySet="BangLuong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietHD_HopDong" Association="QLNSModel.Store.FK_ChiTietHD_HopDong">
+      <End Role="HopDong" EntitySet="HopDong" />
+      <End Role="ChiTietHD" EntitySet="ChiTietHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietHD_NhanVien" Association="QLNSModel.Store.FK_ChiTietHD_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="ChiTietHD" EntitySet="ChiTietHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChucVu_NhanVien" Association="QLNSModel.Store.FK_ChucVu_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="ChucVu" EntitySet="ChucVu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HopDong_LoaiHopDong" Association="QLNSModel.Store.FK_HopDong_LoaiHopDong">
+      <End Role="LoaiHopDong" EntitySet="LoaiHopDong" />
+      <End Role="HopDong" EntitySet="HopDong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_PhongBan" Association="QLNSModel.Store.FK_NhanVien_PhongBan">
+      <End Role="PhongBan" EntitySet="PhongBan" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BangCong">
+    <Key>
+      <PropertyRef Name="MaCong" />
+    </Key>
+    <Property Name="MaCong" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="SoNgay" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="MaLuong" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="BangLuong">
+    <Key>
+      <PropertyRef Name="MaLuong" />
+    </Key>
+    <Property Name="MaLuong" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="HeSoLuong" Type="nvarchar" MaxLength="50" />
+    <Property Name="Thang" Type="datetime" />
+    <Property Name="Gia" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaNV" Type="int" />
+  </EntityType>
+  <EntityType Name="ChiTietHD">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaHD" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="MaNV" Type="int" Nullable="false" />
+    <Property Name="NgayKy" Type="datetime" />
+    <Property Name="NhiemVu" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ChucVu">
+    <Key>
+      <PropertyRef Name="MaChucVu" />
+    </Key>
+    <Property Name="MaChucVu" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaNV" Type="int" />
+  </EntityType>
+  <EntityType Name="HopDong">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaLoaiHD" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="LoaiHopDong">
+    <Key>
+      <PropertyRef Name="MaLoaiHD" />
+    </Key>
+    <Property Name="MaLoaiHD" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="int" Nullable="false" />
+    <Property Name="HoNV" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DienThoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaPB" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="PhongBan">
+    <Key>
+      <PropertyRef Name="MaPB" />
+    </Key>
+    <Property Name="MaPB" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="TenPB" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_BangCong_BangLuong">
+    <End Role="BangLuong" Type="QLNSModel.Store.BangLuong" Multiplicity="0..1" />
+    <End Role="BangCong" Type="QLNSModel.Store.BangCong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BangLuong">
+        <PropertyRef Name="MaLuong" />
+      </Principal>
+      <Dependent Role="BangCong">
+        <PropertyRef Name="MaLuong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BangLuong_NhanVien">
+    <End Role="NhanVien" Type="QLNSModel.Store.NhanVien" Multiplicity="0..1" />
+    <End Role="BangLuong" Type="QLNSModel.Store.BangLuong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="BangLuong">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietHD_HopDong">
+    <End Role="HopDong" Type="QLNSModel.Store.HopDong" Multiplicity="1" />
+    <End Role="ChiTietHD" Type="QLNSModel.Store.ChiTietHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HopDong">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="ChiTietHD">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietHD_NhanVien">
+    <End Role="NhanVien" Type="QLNSModel.Store.NhanVien" Multiplicity="1" />
+    <End Role="ChiTietHD" Type="QLNSModel.Store.ChiTietHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="ChiTietHD">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChucVu_NhanVien">
+    <End Role="NhanVien" Type="QLNSModel.Store.NhanVien" Multiplicity="0..1" />
+    <End Role="ChucVu" Type="QLNSModel.Store.ChucVu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="ChucVu">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HopDong_LoaiHopDong">
+    <End Role="LoaiHopDong" Type="QLNSModel.Store.LoaiHopDong" Multiplicity="0..1" />
+    <End Role="HopDong" Type="QLNSModel.Store.HopDong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiHopDong">
+        <PropertyRef Name="MaLoaiHD" />
+      </Principal>
+      <Dependent Role="HopDong">
+        <PropertyRef Name="MaLoaiHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_PhongBan">
+    <End Role="PhongBan" Type="QLNSModel.Store.PhongBan" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="QLNSModel.Store.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhongBan">
+        <PropertyRef Name="MaPB" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="MaPB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
