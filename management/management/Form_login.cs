@@ -40,7 +40,7 @@ namespace management
                 }
 
                 }
-            
+
             catch (SqlException ex)
             {
                 MessageBox.Show("Ket noi không thành  cong", "Dang nhap", MessageBoxButtons.OK, MessageBoxIcon.Information);

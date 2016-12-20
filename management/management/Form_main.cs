@@ -15,11 +15,17 @@ namespace management
         {
             InitializeComponent();
         }
-
+        frmBangLuong BangLuong = null;
         private void btBangLuong_Click(object sender, EventArgs e)
         {
-            //BangLuong bl = new BangLuong();
+            //BangLuong bl = new frmBangLuong();
             //bl.ShowDialog();
+            if (BangLuong == null || BangLuong.IsDisposed)
+            {
+                BangLuong = new frmBangLuong();
+                BangLuong.Show();
+            }
+            else BangLuong.Activate();
         }
 
         private void btBangCong_Click(object sender, EventArgs e)
