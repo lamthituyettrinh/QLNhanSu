@@ -40,6 +40,8 @@
             this.btLuu = new System.Windows.Forms.Button();
             this.btHuy = new System.Windows.Forms.Button();
             this.btDong = new System.Windows.Forms.Button();
+            this.btTongCong = new System.Windows.Forms.Button();
+            this.lbTongCong = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangCong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,9 +110,9 @@
             // 
             this.dgvBangCong.BackgroundColor = System.Drawing.Color.Cyan;
             this.dgvBangCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBangCong.Location = new System.Drawing.Point(0, 108);
+            this.dgvBangCong.Location = new System.Drawing.Point(0, 163);
             this.dgvBangCong.Name = "dgvBangCong";
-            this.dgvBangCong.Size = new System.Drawing.Size(552, 190);
+            this.dgvBangCong.Size = new System.Drawing.Size(552, 135);
             this.dgvBangCong.TabIndex = 8;
             this.dgvBangCong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangCong_CellClick);
             // 
@@ -121,7 +123,6 @@
             this.cbbMaLuong.Name = "cbbMaLuong";
             this.cbbMaLuong.Size = new System.Drawing.Size(143, 21);
             this.cbbMaLuong.TabIndex = 11;
-        
             // 
             // btLuu
             // 
@@ -159,12 +160,37 @@
             this.btDong.UseVisualStyleBackColor = false;
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
+            // btTongCong
+            // 
+            this.btTongCong.BackColor = System.Drawing.Color.Aqua;
+            this.btTongCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTongCong.ForeColor = System.Drawing.Color.Black;
+            this.btTongCong.Location = new System.Drawing.Point(138, 112);
+            this.btTongCong.Name = "btTongCong";
+            this.btTongCong.Size = new System.Drawing.Size(131, 34);
+            this.btTongCong.TabIndex = 18;
+            this.btTongCong.Text = "Tính Tổng Công:";
+            this.btTongCong.UseVisualStyleBackColor = false;
+            this.btTongCong.Click += new System.EventHandler(this.btTongCong_Click);
+            // 
+            // lbTongCong
+            // 
+            this.lbTongCong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.lbTongCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTongCong.Location = new System.Drawing.Point(294, 115);
+            this.lbTongCong.Name = "lbTongCong";
+            this.lbTongCong.Size = new System.Drawing.Size(246, 31);
+            this.lbTongCong.TabIndex = 19;
+            this.lbTongCong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // BangCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(552, 361);
+            this.Controls.Add(this.lbTongCong);
+            this.Controls.Add(this.btTongCong);
             this.Controls.Add(this.btDong);
             this.Controls.Add(this.btHuy);
             this.Controls.Add(this.btLuu);
@@ -200,5 +226,7 @@
         private System.Windows.Forms.Button btLuu;
         private System.Windows.Forms.Button btHuy;
         private System.Windows.Forms.Button btDong;
+        private System.Windows.Forms.Button btTongCong;
+        private System.Windows.Forms.Label lbTongCong;
     }
 }

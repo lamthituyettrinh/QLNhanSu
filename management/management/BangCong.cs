@@ -101,6 +101,13 @@ namespace management
         {
             ds.RejectChanges();
         }
+
+        private void btTongCong_Click(object sender, EventArgs e)
+        {
+            int soluong = Convert.ToInt32(txtSoLuong.Text);
+            int songay = Convert.ToInt32(txtSoNgay.Text);
+            lbTongCong.Text = Convert.ToString(soluong * songay);
+        }
       
 
        
