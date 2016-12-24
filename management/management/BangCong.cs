@@ -94,6 +94,15 @@ namespace management
             cmd = new SqlCommand(det, cn);
             cmd.Parameters.Add("@macong", SqlDbType.NVarChar, 5, "MaCong");
             da.DeleteCommand = cmd;
+            
+            //sua du lieu tu bang BangCong
+            string upd = "UPDATE BangCong SET  SoLuong = @soluong , SoNgay = @songay, MaLuong = @maluong WHERE MaCong = @macong";
+            cmd = new SqlCommand(upd, cn);
+            cmd.Parameters.Add("@macong", SqlDbType.NVarChar, 5, "MaCong");
+            cmd.Parameters.Add("@soluong", SqlDbType.Int, 10, "SoLuong");
+            cmd.Parameters.Add("@songay", SqlDbType.NVarChar, 50, "SoNgay");
+            cmd.Parameters.Add("@maluong", SqlDbType.NVarChar, 5, "MaLuong");
+            da.UpdateCommand = cmd;
             da.Update(ds);
         }
 
