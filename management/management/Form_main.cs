@@ -65,8 +65,8 @@ namespace management
 
         private void btCTHD_Click(object sender, EventArgs e)
         {
-            //ChiTietHopDong cthd = new ChiTietHopDong();
-            //cthd.ShowDialog();
+            frmchitiethopdong cthd = new frmchitiethopdong();
+            cthd.ShowDialog();
         }
 
         private void btNhanVien_Click(object sender, EventArgs e)
