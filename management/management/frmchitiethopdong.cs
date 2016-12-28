@@ -26,6 +26,13 @@ namespace management
             cnStr = ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString;
             cn = new SqlConnection(cnStr);
             dgvCTHD.DataSource = GetCTHDDataset().Tables[0];
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("Select NgayKy From ChiTietHD", cn);
+            da.Fill(dt);
+            cbbNgayky.DataSource = dt;
+            cbbNgayky.DisplayMember = "NgayKy";
+            cbbNgayky.ValueMember = "NgayKy";
         }
         public DataSet GetCTHDDataset()
         {

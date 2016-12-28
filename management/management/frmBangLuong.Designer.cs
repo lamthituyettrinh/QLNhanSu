@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpthang = new System.Windows.Forms.DateTimePicker();
             this.txtmaluong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,13 +41,14 @@
             this.dgvbangluong = new System.Windows.Forms.DataGridView();
             this.btluu = new System.Windows.Forms.Button();
             this.bthuy = new System.Windows.Forms.Button();
+            this.cbbThang = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbangluong)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtpthang);
+            this.groupBox1.Controls.Add(this.cbbThang);
             this.groupBox1.Controls.Add(this.txtmaluong);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -64,14 +64,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "BẢNG LƯƠNG";
-            // 
-            // dtpthang
-            // 
-            this.dtpthang.Location = new System.Drawing.Point(95, 26);
-            this.dtpthang.Name = "dtpthang";
-            this.dtpthang.Size = new System.Drawing.Size(136, 22);
-            this.dtpthang.TabIndex = 10;
-            this.dtpthang.Value = new System.DateTime(2012, 12, 12, 0, 0, 0, 0);
             // 
             // txtmaluong
             // 
@@ -174,6 +166,14 @@
             this.bthuy.UseVisualStyleBackColor = true;
             this.bthuy.Click += new System.EventHandler(this.bthuy_Click);
             // 
+            // cbbThang
+            // 
+            this.cbbThang.FormattingEnabled = true;
+            this.cbbThang.Location = new System.Drawing.Point(95, 25);
+            this.cbbThang.Name = "cbbThang";
+            this.cbbThang.Size = new System.Drawing.Size(121, 24);
+            this.cbbThang.TabIndex = 10;
+            // 
             // frmBangLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -198,7 +198,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dtpthang;
         private System.Windows.Forms.TextBox txtmaluong;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -211,5 +210,6 @@
         private System.Windows.Forms.DataGridView dgvbangluong;
         private System.Windows.Forms.Button btluu;
         private System.Windows.Forms.Button bthuy;
+        private System.Windows.Forms.ComboBox cbbThang;
     }
 }

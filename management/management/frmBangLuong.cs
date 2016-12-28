@@ -25,6 +25,15 @@ namespace management
             cnStr = ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString;
             cn = new SqlConnection(cnStr);
             dgvbangluong.DataSource = GetBangLuongDataset().Tables[0];
+
+            // load du lieu vao comboboxThang tu bang BangLuong
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("Select Thang From BangLuong", cn);
+            da.Fill(dt);
+            cbbThang.DataSource = dt;
+            cbbThang.DisplayMember = "Thang";
+            cbbThang.ValueMember = "Thang";
+
         }
         public DataSet GetBangLuongDataset()
         {
@@ -33,7 +42,7 @@ namespace management
                 string sql = "SELECT * FROM BangLuong";
                 SqlDataAdapter da = new SqlDataAdapter(sql, cn);
                 ds = new DataSet();
-                da.Fill(ds);
+                da.Fill(ds); //Lay du lieu tu CSDL copy qua dataset(nam tren may tinh)
                 return ds;
             }
             catch (SqlException ex)
@@ -54,7 +63,7 @@ namespace management
             SqlCommand cmd = new SqlCommand(ins, cn);
 
             cmd.Parameters.Add("@id", SqlDbType.Int, 10, "MaNV");
-            //cmd.Parameters.Add("@Thang", SqlDbType.DateTime, 10, "Thang");
+            cmd.Parameters.Add("@Thang", SqlDbType.DateTime, 2, "Thang");
             cmd.Parameters.Add("@Gia", SqlDbType.NVarChar, 50, "Gia");
             cmd.Parameters.Add("@HeSoLuong", SqlDbType.NVarChar, 50, "HeSoLuong");
             cmd.Parameters.Add("@MaLuong", SqlDbType.NVarChar, 5, "@MaLuong");
@@ -62,9 +71,9 @@ namespace management
             da.InsertCommand = cmd;
         
 
-            string del = "DELETE FROM BangLuong WHERE MaNV=@id";
+            string del = "DELETE FROM BangLuong WHERE MaLuong=@MaLuong";
             cmd = new SqlCommand(del, cn);
-            cmd.Parameters.Add("@id", SqlDbType.Int, 10, "MaNV");
+            cmd.Parameters.Add("@MaLuong", SqlDbType.Int, 10, "MaLuong");
             da.DeleteCommand = cmd;
             da.Update(ds);
 

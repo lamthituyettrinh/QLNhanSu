@@ -38,17 +38,27 @@ namespace management
         {
             Application.Exit();
         }
-
+        frmPhongban PhongBan = null;
         private void btPhongBan_Click(object sender, EventArgs e)
         {
             //PhongBan pb = new PhongBan();
             //pb.ShowDialog();
+            if (PhongBan == null || PhongBan.IsDisposed)
+            {
+                PhongBan = new frmPhongban();
+                PhongBan.Show();
+            }
+            else PhongBan.Activate();
         }
-
+        Chức_Vụ ChucVu = null;
         private void btChucVu_Click(object sender, EventArgs e)
         {
-            //ChucVu cv = new ChucVu();
-            //cv.ShowDialog();
+            if (ChucVu == null || ChucVu.IsDisposed)
+            {
+                ChucVu = new Chức_Vụ();
+                ChucVu.Show();
+            }
+            else ChucVu.Activate();
         }
 
         private void btHopDong_Click(object sender, EventArgs e)

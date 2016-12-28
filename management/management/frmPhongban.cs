@@ -15,6 +15,7 @@ namespace management
     {
         string cnStr = "";
         SqlConnection cn;
+        DataSet ds = new DataSet();
         public frmPhongban()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace management
         {
             cnStr = ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString;
             cn = new SqlConnection(cnStr);
+            dgvPhongban.DataSource = GetPhongBanDataset().Tables[0];
         }
         private void Connect()
         {
@@ -53,6 +55,27 @@ namespace management
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                cn.Close();
+            }
+        }
+        public DataSet GetPhongBanDataset()
+        {
+            try
+            {
+                string sql = "SELECT* FROM PhongBan";
+                SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+                //DataSet ds = new DataSet(); //bo de khong bi loi khong dong bo voi dataset toan cuc
+                da.Fill(ds);
+                //Lay du lieu tu CSDL copy qua dataset(nam tren may tinh) 
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
                 cn.Close();
             }
         }
@@ -90,7 +113,7 @@ namespace management
 
         private void bttim_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT*FROM NhanVien WHERE";
+            string sql = "SELECT*FROM PhongBan WHERE";
             if (rdbma.Checked == true)
                 sql += "MaNV =" + txtnhap.Text;
             else if (rdbten.Checked == true)
