@@ -93,3 +93,8 @@ C:\Users\HP\Desktop\lamtrinh\QLNhanSu\management\management\obj\x86\Debug\manage
 C:\Users\HP\Desktop\lamtrinh\QLNhanSu\management\management\obj\x86\Debug\management.NhanVien.resources
 C:\Users\HP\Desktop\lamtrinh\QLNhanSu\management\management\obj\x86\Debug\management.Properties.Resources.resources
 C:\Users\HP\Desktop\lamtrinh\QLNhanSu\management\management\obj\x86\Debug\management.csproj.GenerateResource.Cache
+C:\QLNhanSu\management\management\obj\x86\Debug\management.Chức_Vụ.resources
+C:\QLNhanSu\management\management\obj\x86\Debug\management.frmchitiethopdong.resources
+C:\QLNhanSu\management\management\obj\x86\Debug\management.frmPhongban.resources
+C:\QLNhanSu\management\management\obj\x86\Debug\management.HopDong.resources
+C:\QLNhanSu\management\management\obj\x86\Debug\management.NhanVien.resources

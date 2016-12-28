@@ -15,17 +15,17 @@ namespace management
         {
             InitializeComponent();
         }
-        frmBangLuong BangLuong = null;
+        //frmBangLuong BangLuong = null;
         private void btBangLuong_Click(object sender, EventArgs e)
         {
-            //BangLuong bl = new frmBangLuong();
-            //bl.ShowDialog();
-            if (BangLuong == null || BangLuong.IsDisposed)
-            {
-                BangLuong = new frmBangLuong();
-                BangLuong.Show();
-            }
-            else BangLuong.Activate();
+            frmBangLuong bl = new frmBangLuong();
+            bl.ShowDialog();
+            //if (BangLuong == null || BangLuong.IsDisposed)
+            //{
+            //    BangLuong = new frmBangLuong();
+            //    BangLuong.Show();
+            //}
+            //else BangLuong.Activate();
         }
 
         private void btBangCong_Click(object sender, EventArgs e)
@@ -83,6 +83,11 @@ namespace management
         {
             NhanVien nv = new NhanVien();
             nv.ShowDialog();
+        }
+
+        private void Form_main_Load(object sender, EventArgs e)
+        {
+
         }
 
        

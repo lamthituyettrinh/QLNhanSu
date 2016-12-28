@@ -192,7 +192,7 @@
             this.Controls.Add(this.lbDeTai);
             this.Name = "Form_main";
             this.Text = "Form1";
-         
+            this.Load += new System.EventHandler(this.Form_main_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
