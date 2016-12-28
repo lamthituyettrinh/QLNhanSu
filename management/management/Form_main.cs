@@ -63,14 +63,14 @@ namespace management
 
         private void btHopDong_Click(object sender, EventArgs e)
         {
-            //HopDong hd = new HopDong();
-            //hd.ShowDialog();
+            HopDong hd = new HopDong();
+            hd.ShowDialog();
         }
 
         private void btLoaiHopDong_Click(object sender, EventArgs e)
         {
-            //LoaiHopDong lhd = new LoaiHopDong();
-            //lhd.ShowDialog();
+            LoaiHopDong lhd = new LoaiHopDong();
+            lhd.ShowDialog();
         }
 
         private void btCTHD_Click(object sender, EventArgs e)
@@ -85,9 +85,6 @@ namespace management
             nv.ShowDialog();
         }
 
-        private void Form_main_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

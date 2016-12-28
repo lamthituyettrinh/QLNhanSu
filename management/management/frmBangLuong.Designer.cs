@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbThang = new System.Windows.Forms.ComboBox();
             this.txtmaluong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,13 +42,24 @@
             this.dgvbangluong = new System.Windows.Forms.DataGridView();
             this.btluu = new System.Windows.Forms.Button();
             this.bthuy = new System.Windows.Forms.Button();
-            this.cbbThang = new System.Windows.Forms.ComboBox();
+            this.cobSoLuong = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cobSoNgay = new System.Windows.Forms.ComboBox();
+            this.btTongLuong = new System.Windows.Forms.Button();
+            this.lbTongLuong = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbangluong)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbTongLuong);
+            this.groupBox1.Controls.Add(this.btTongLuong);
+            this.groupBox1.Controls.Add(this.cobSoNgay);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cobSoLuong);
             this.groupBox1.Controls.Add(this.cbbThang);
             this.groupBox1.Controls.Add(this.txtmaluong);
             this.groupBox1.Controls.Add(this.label2);
@@ -60,10 +72,18 @@
             this.groupBox1.Controls.Add(this.lbmanv);
             this.groupBox1.Location = new System.Drawing.Point(23, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(600, 153);
+            this.groupBox1.Size = new System.Drawing.Size(600, 193);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "BẢNG LƯƠNG";
+            // 
+            // cbbThang
+            // 
+            this.cbbThang.FormattingEnabled = true;
+            this.cbbThang.Location = new System.Drawing.Point(95, 25);
+            this.cbbThang.Name = "cbbThang";
+            this.cbbThang.Size = new System.Drawing.Size(121, 24);
+            this.cbbThang.TabIndex = 10;
             // 
             // txtmaluong
             // 
@@ -141,10 +161,11 @@
             // dgvbangluong
             // 
             this.dgvbangluong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvbangluong.Location = new System.Drawing.Point(23, 181);
+            this.dgvbangluong.Location = new System.Drawing.Point(23, 231);
             this.dgvbangluong.Name = "dgvbangluong";
-            this.dgvbangluong.Size = new System.Drawing.Size(600, 176);
+            this.dgvbangluong.Size = new System.Drawing.Size(600, 126);
             this.dgvbangluong.TabIndex = 1;
+            this.dgvbangluong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbangluong_CellClick);
             // 
             // btluu
             // 
@@ -166,13 +187,59 @@
             this.bthuy.UseVisualStyleBackColor = true;
             this.bthuy.Click += new System.EventHandler(this.bthuy_Click);
             // 
-            // cbbThang
+            // cobSoLuong
             // 
-            this.cbbThang.FormattingEnabled = true;
-            this.cbbThang.Location = new System.Drawing.Point(95, 25);
-            this.cbbThang.Name = "cbbThang";
-            this.cbbThang.Size = new System.Drawing.Size(121, 24);
-            this.cbbThang.TabIndex = 10;
+            this.cobSoLuong.FormattingEnabled = true;
+            this.cobSoLuong.Location = new System.Drawing.Point(325, 114);
+            this.cobSoLuong.Name = "cobSoLuong";
+            this.cobSoLuong.Size = new System.Drawing.Size(103, 24);
+            this.cobSoLuong.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(254, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 16);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Số Lượng";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 163);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Số Ngày";
+            // 
+            // cobSoNgay
+            // 
+            this.cobSoNgay.FormattingEnabled = true;
+            this.cobSoNgay.Location = new System.Drawing.Point(95, 155);
+            this.cobSoNgay.Name = "cobSoNgay";
+            this.cobSoNgay.Size = new System.Drawing.Size(136, 24);
+            this.cobSoNgay.TabIndex = 14;
+            // 
+            // btTongLuong
+            // 
+            this.btTongLuong.Location = new System.Drawing.Point(245, 151);
+            this.btTongLuong.Name = "btTongLuong";
+            this.btTongLuong.Size = new System.Drawing.Size(111, 28);
+            this.btTongLuong.TabIndex = 15;
+            this.btTongLuong.Text = "Tổng Lương: ";
+            this.btTongLuong.UseVisualStyleBackColor = true;
+            this.btTongLuong.Click += new System.EventHandler(this.btTongLuong_Click);
+            // 
+            // lbTongLuong
+            // 
+            this.lbTongLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbTongLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTongLuong.Location = new System.Drawing.Point(396, 153);
+            this.lbTongLuong.Name = "lbTongLuong";
+            this.lbTongLuong.Size = new System.Drawing.Size(191, 26);
+            this.lbTongLuong.TabIndex = 16;
+            this.lbTongLuong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmBangLuong
             // 
@@ -211,5 +278,11 @@
         private System.Windows.Forms.Button btluu;
         private System.Windows.Forms.Button bthuy;
         private System.Windows.Forms.ComboBox cbbThang;
+        private System.Windows.Forms.Label lbTongLuong;
+        private System.Windows.Forms.Button btTongLuong;
+        private System.Windows.Forms.ComboBox cobSoNgay;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cobSoLuong;
     }
 }

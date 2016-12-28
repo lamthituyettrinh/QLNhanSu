@@ -34,6 +34,21 @@ namespace management
             cbbThang.DisplayMember = "Thang";
             cbbThang.ValueMember = "Thang";
 
+
+            // load du lieu vao comboboxSoLuong tu bang BangCong
+            DataTable bc = new DataTable();
+            SqlDataAdapter dr = new SqlDataAdapter("Select * From BangCong", cn);
+            dr.Fill(bc);
+            cobSoLuong.DataSource = bc;
+            cobSoLuong.DisplayMember = "SoLuong";
+            cobSoLuong.ValueMember = "SoLuong";
+
+
+            cobSoNgay.DataSource = bc;
+            cobSoNgay.DisplayMember = "SoNgay";
+            cobSoNgay.ValueMember = "SoNgay";
+
+
         }
         public DataSet GetBangLuongDataset()
         {
@@ -82,6 +97,31 @@ namespace management
         private void bthuy_Click(object sender, EventArgs e)
         {
             ds.RejectChanges();
+        }
+
+        private void btTongLuong_Click(object sender, EventArgs e)
+        {
+            int soluong = Convert.ToInt32(cobSoLuong.Text);
+            int songay = Convert.ToInt32(cobSoNgay.Text);
+            int dongia = Convert.ToInt32(txtdongia.Text);
+            int hesoluong = Convert.ToInt32(txthsl.Text);
+            lbTongLuong.Text = Convert.ToString(soluong * songay * dongia * hesoluong);
+        }
+
+        private void dgvbangluong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvbangluong.Rows[e.RowIndex];
+                txtmaluong.Text = row.Cells[0].Value.ToString();
+                txthsl.Text = row.Cells[1].Value.ToString();
+                cbbThang.Text = row.Cells[2].Value.ToString();
+                txtdongia.Text = row.Cells[3].Value.ToString();
+                txtmanv.Text = row.Cells[4].Value.ToString();
+
+
+            }
         }
   
     }
