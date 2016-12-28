@@ -62,7 +62,7 @@ namespace management
             string ins = "INSERT INTO HopDong(MaHD, Ten, MaLoaiHD) VALUES (@idhd, @ten, @idloaihd)";
             SqlCommand cmd = new SqlCommand(ins, cn);
             cmd.Parameters.Add("@idhd", SqlDbType.NVarChar, 5, "MaHD");
-            cmd.Parameters.Add("@ten", SqlDbType.Int, 10, "Ten");
+            cmd.Parameters.Add("@ten", SqlDbType.NVarChar, 10, "Ten");
             cmd.Parameters.Add("@idloaihd", SqlDbType.NVarChar, 50, "MaLoaiHD");
 
             da.InsertCommand = cmd;
@@ -76,7 +76,7 @@ namespace management
             SqlCommand cmd = new SqlCommand(upd, cn);
             cmd = new SqlCommand(upd, cn);
             cmd.Parameters.Add("@MaHD", SqlDbType.NVarChar, 5, "MaHD");
-            cmd.Parameters.Add("@Ten", SqlDbType.Int, 10, "Ten");
+            cmd.Parameters.Add("@Ten", SqlDbType.NVarChar, 10, "Ten");
             cmd.Parameters.Add("@MaLoaiHD", SqlDbType.NVarChar, 50, "MaLoaiHD");
 
             da.UpdateCommand = cmd;

@@ -68,7 +68,7 @@ namespace management
             string ins = "INSERT INTO ChucVu(MaCV, TenCV, MaNV) VALUES (@idcv, @tencv, @idnv)";
             SqlCommand cmd = new SqlCommand(ins, cn);
             cmd.Parameters.Add("@idcv", SqlDbType.NVarChar, 5, "MaCV");
-            cmd.Parameters.Add("@ten", SqlDbType.Int, 10, "TenCV");
+            cmd.Parameters.Add("@ten", SqlDbType.NVarChar, 10, "TenCV");
             cmd.Parameters.Add("@idnv", SqlDbType.NVarChar, 50, "MaNV");
           
             da.InsertCommand = cmd;
@@ -82,7 +82,7 @@ namespace management
             SqlCommand cmd = new SqlCommand(upd, cn);
             cmd = new SqlCommand(upd, cn);
             cmd.Parameters.Add("@MaCV", SqlDbType.NVarChar, 5, "MaCV");
-            cmd.Parameters.Add("@TenCV", SqlDbType.Int, 10, "TenCV");
+            cmd.Parameters.Add("@TenCV", SqlDbType.NVarChar, 10, "TenCV");
             cmd.Parameters.Add("@MaNV", SqlDbType.NVarChar, 50, "MaNV");
             
             da.UpdateCommand = cmd;

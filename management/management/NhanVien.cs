@@ -82,10 +82,10 @@ namespace management
             string ins = "INSERT INTO NhanVien(MaNV, HoNV, Ten, DiaChi,DienThoai,MaPB) VALUES (@idnv, @ho, @ten,@diachi,@dienthoai,@idpb)";
             SqlCommand cmd = new SqlCommand(ins, cn);
             cmd.Parameters.Add("@idnv", SqlDbType.NVarChar, 5, "MaNV");
-            cmd.Parameters.Add("@ho", SqlDbType.Int, 10, "HoNV");
+            cmd.Parameters.Add("@ho", SqlDbType.NVarChar, 10, "HoNV");
             cmd.Parameters.Add("@ten", SqlDbType.NVarChar, 50, "Ten");
             cmd.Parameters.Add("@diachi", SqlDbType.NVarChar, 5, "DiaChi");
-            cmd.Parameters.Add("@dienthoai", SqlDbType.NVarChar, 5, "DienThoai");
+            cmd.Parameters.Add("@dienthoai", SqlDbType.Int, 5, "DienThoai");
             cmd.Parameters.Add("@idpb", SqlDbType.NVarChar, 5, "MaPB");
             da.InsertCommand = cmd;
             da.Update(ds);
@@ -98,10 +98,10 @@ namespace management
             SqlCommand cmd = new SqlCommand(upd, cn);
             cmd = new SqlCommand(upd, cn);
             cmd.Parameters.Add("@MaNV", SqlDbType.NVarChar, 5, "MaNV");
-            cmd.Parameters.Add("@HoNV", SqlDbType.Int, 10, "HoNV");
+            cmd.Parameters.Add("@HoNV", SqlDbType.NVarChar, 10, "HoNV");
             cmd.Parameters.Add("@Ten", SqlDbType.NVarChar, 50, "Ten");
             cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar, 5, "DiaChi");
-            cmd.Parameters.Add("@DienThoai", SqlDbType.NVarChar, 5, "DienThoai");
+            cmd.Parameters.Add("@DienThoai", SqlDbType.Int, 5, "DienThoai");
             cmd.Parameters.Add("@MaPB", SqlDbType.NVarChar, 5, "MaPB");
             da.UpdateCommand = cmd;
             da.Update(ds);
