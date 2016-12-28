@@ -71,8 +71,13 @@ namespace management
 
         private void btNhanVien_Click(object sender, EventArgs e)
         {
-            //NhanVien nv = new NhanVien();
-            //nv.ShowDialog();
+            NhanVien nv = new NhanVien();
+            nv.ShowDialog();
+        }
+
+        private void Form_main_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

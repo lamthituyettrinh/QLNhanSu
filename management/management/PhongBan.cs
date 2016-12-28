@@ -5,7 +5,7 @@ using System.Text;
 
 namespace management
 {
-    class PhongBan
+    public class PhongBan
     {
         public int ID { get; set; }
         public string Name { get; set; }
